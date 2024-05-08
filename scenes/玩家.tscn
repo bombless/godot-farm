@@ -1,6 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://bldirrw6fgeah"]
+[gd_scene load_steps=26 format=3 uid="uid://bldirrw6fgeah"]
 
 [ext_resource type="Texture2D" uid="uid://dssbnyk35vbap" path="res://assets/Characters/Basic Charakter Actions.png" id="1_dymxc"]
+[ext_resource type="Script" path="res://scripts/玩家.gd" id="1_hxmke"]
+[ext_resource type="Texture2D" uid="uid://x266dndkxi51" path="res://assets/Characters/Basic Charakter Spritesheet.png" id="2_388ou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0mkd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfmoh"]
+atlas = ExtResource("2_388ou")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07ifh"]
+atlas = ExtResource("2_388ou")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x7ua"]
+atlas = ExtResource("2_388ou")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hofoy"]
+atlas = ExtResource("2_388ou")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ttl"]
+atlas = ExtResource("2_388ou")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_falg5"]
+atlas = ExtResource("2_388ou")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muldd"]
+atlas = ExtResource("2_388ou")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28qb2"]
+atlas = ExtResource("2_388ou")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svvjw"]
+atlas = ExtResource("2_388ou")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wodf"]
+atlas = ExtResource("2_388ou")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_451wv"]
+atlas = ExtResource("2_388ou")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr15h"]
+atlas = ExtResource("2_388ou")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgr3l"]
+atlas = ExtResource("2_388ou")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbqgr"]
+atlas = ExtResource("2_388ou")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpbkf"]
+atlas = ExtResource("2_388ou")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltqew"]
+atlas = ExtResource("2_388ou")
+region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1al3y"]
 atlas = ExtResource("1_dymxc")
@@ -20,6 +88,94 @@ region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ulytp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfmoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07ifh")
+}],
+"loop": true,
+"name": &"朝右",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x7ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hofoy")
+}],
+"loop": true,
+"name": &"朝右跳",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ttl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_falg5")
+}],
+"loop": true,
+"name": &"朝左",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muldd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28qb2")
+}],
+"loop": true,
+"name": &"朝左跳",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svvjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wodf")
+}],
+"loop": true,
+"name": &"正面",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_451wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr15h")
+}],
+"loop": true,
+"name": &"正面跳",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgr3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbqgr")
+}],
+"loop": true,
+"name": &"背面",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpbkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltqew")
+}],
+"loop": true,
+"name": &"背面跳",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1al3y")
@@ -54,9 +210,13 @@ animations = [{
 }]
 
 [node name="玩家" type="CharacterBody2D"]
+script = ExtResource("1_hxmke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v0mkd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ulytp")
-animation = &"铲子朝左"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+animation = &"背面跳"
+autoplay = "正面"
+frame_progress = 0.898681
