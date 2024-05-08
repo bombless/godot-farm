@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bldirrw6fgeah"]
+
+[ext_resource type="Texture2D" uid="uid://dssbnyk35vbap" path="res://assets/Characters/Basic Charakter Actions.png" id="1_dymxc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1al3y"]
+atlas = ExtResource("1_dymxc")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2kwt"]
+atlas = ExtResource("1_dymxc")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipno6"]
+atlas = ExtResource("1_dymxc")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta4br"]
+atlas = ExtResource("1_dymxc")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ulytp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1al3y")
+}],
+"loop": true,
+"name": &"铲子朝右",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2kwt")
+}],
+"loop": true,
+"name": &"铲子朝左",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipno6")
+}],
+"loop": true,
+"name": &"铲子正面",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta4br")
+}],
+"loop": true,
+"name": &"铲子背面",
+"speed": 5.0
+}]
+
+[node name="玩家" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ulytp")
+animation = &"铲子朝左"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
