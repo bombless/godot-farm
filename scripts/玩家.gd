@@ -1,5 +1,9 @@
 extends CharacterBody2D
 @onready var body = $AnimatedSprite2D
+@onready var cast_left = $RayCast2DLeft
+@onready var cast_right = $RayCast2DRight
+@onready var cast_down = $RayCast2DDown
+@onready var cast_up = $RayCast2DUp
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -26,6 +30,8 @@ func _physics_process(delta):
 		on_floor = true
 		position_z = 0
 		velocity_z = 0
+		
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("跳") and on_floor:
@@ -50,9 +56,23 @@ func _physics_process(delta):
 		body.play("朝右" if on_floor else "朝右跳")
 
 	#move_and_slide()
+	
+	if velocity.x < 0 and cast_left.is_colliding():
+		velocity.x *= -1
+	if velocity.x > 0 and cast_right.is_colliding():
+		velocity.x *= -1
+	if velocity.y < 0 and cast_up.is_colliding():
+		velocity.y *= -1
+	if velocity.y > 0 and cast_down.is_colliding():
+		velocity.y *= -1
+		
 	position_x_2d += velocity.x * 0.01
 	position_y_2d += velocity.y * 0.01
 	
 	
+	
 	position.x = position_x_2d
 	position.y = position_y_2d + position_z 
+
+
+

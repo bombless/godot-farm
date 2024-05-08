@@ -219,4 +219,16 @@ shape = SubResource("CircleShape2D_v0mkd")
 sprite_frames = SubResource("SpriteFrames_ulytp")
 animation = &"背面跳"
 autoplay = "正面"
-frame_progress = 0.898681
+frame_progress = 0.762506
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-18, 0)
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+target_position = Vector2(17, 0)
+
+[node name="RayCast2DDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 17)
+
+[node name="RayCast2DUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -17)
